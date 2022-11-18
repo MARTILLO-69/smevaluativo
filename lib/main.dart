@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smevaluativo/screens/bottom_bar.dart';
+import 'package:smevaluativo/utils/app_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primaryColor: primary,
       ),
       home: const BottomBar(),
     );
