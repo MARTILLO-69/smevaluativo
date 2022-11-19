@@ -5,6 +5,8 @@ import 'package:gap/gap.dart';
 import 'package:smevaluativo/screens/ticket_view.dart';
 import 'package:smevaluativo/utils/app_styles.dart';
 
+import 'concert_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -26,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            "Good Morning", style: Styles.headLineStyle3,
+                            "Buen día", style: Styles.headLineStyle3,
                         ),
                         const Gap(5),
                         Text(
@@ -58,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const Icon(FluentSystemIcons.ic_fluent_search_regular,color: Color(0xFFBFC205)),
                       Text(
-                        "Search",
+                        "Buscar",
                         style: Styles.headLineStyle4,
                       )
                     ],
@@ -67,13 +69,13 @@ class HomeScreen extends StatelessWidget {
                 const Gap(40),
                 Row(
                   children: [
-                    Text("Upcoming Flights" , style: Styles.headLineStyle2,),
+                    Text("Próximos vuelos" , style: Styles.headLineStyle2,),
                     const Gap(120),
                     InkWell(
                         onTap: (){
-                          print("ypu are tapped");
+                          print("Estas tocado");
                         },
-                        child: Text("View all" , style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
+                        child: Text("Ver todo" , style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
                   ],
                 )
               ],
@@ -89,6 +91,32 @@ class HomeScreen extends StatelessWidget {
                TicketView()
              ],
            ),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Text("Conciertos" , style: Styles.headLineStyle2,),
+                const Gap(120),
+                InkWell(
+                    onTap: (){
+                      print("Estas tocado");
+                    },
+                    child: Text("Ver todo" , style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: [
+                  ConcertScreen(),
+                  ConcertScreen()
+                ],
+              ),
           )
         ],
       ),
