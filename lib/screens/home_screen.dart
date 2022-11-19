@@ -79,6 +79,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          const Gap(15),
           TicketView(),
         ],
       ),
