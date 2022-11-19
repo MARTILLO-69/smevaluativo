@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const Gap(5),
                         Text(
-                            "Good Ticket", style: Styles.headLineStyle1,
+                            "Fast Tick", style: Styles.headLineStyle1,
                         ),
                       ],
                     ),
@@ -82,6 +82,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           SingleChildScrollView(
            scrollDirection: Axis.horizontal,
+           padding: const EdgeInsets.only(left: 20),
            child: Row(
              children: [
                TicketView(),
