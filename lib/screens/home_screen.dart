@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:smevaluativo/screens/ticket_view.dart';
+import 'package:smevaluativo/utils/app_info_list.dart';
 import 'package:smevaluativo/utils/app_styles.dart';
 
 import 'concert_screen.dart';
@@ -67,17 +68,20 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  children: [
-                    Text("Próximos vuelos" , style: Styles.headLineStyle2,),
-                    const Gap(120),
-                    InkWell(
-                        onTap: (){
-                          print("Estas tocado");
-                        },
-                        child: Text("Ver todo" , style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
-                  ],
-                )
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Text("Vuelos" , style: Styles.headLineStyle1,),
+                      const Gap(120),
+                      InkWell(
+                          onTap: (){
+                            print("Estas tocado");
+                          },
+                          child: Text("Ver todo" , style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -86,10 +90,7 @@ class HomeScreen extends StatelessWidget {
            scrollDirection: Axis.horizontal,
            padding: const EdgeInsets.only(left: 20),
            child: Row(
-             children: [
-               TicketView(),
-               TicketView()
-             ],
+             children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket,)).toList(),
            ),
           ),
           const Gap(15),
@@ -112,10 +113,7 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 20),
               child: Row(
-                children: [
-                  ConcertScreen(),
-                  ConcertScreen()
-                ],
+                children: concertList.map((singleConcert) => ConcertScreen(concert: singleConcert)).toList()
               ),
           )
         ],
