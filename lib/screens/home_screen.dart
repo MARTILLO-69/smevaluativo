@@ -83,7 +83,10 @@ class HomeScreen extends StatelessWidget {
           SingleChildScrollView(
            scrollDirection: Axis.horizontal,
            child: Row(
-             children: [],
+             children: [
+               TicketView(),
+               TicketView()
+             ],
            ),
           )
         ],
